@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import React,{useState,useEffect} from 'react';
+import Card from './components/Card';
 import './App.css';
+import Search from './components/Search';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const [images,setImages]=useState([]);
+  const [term,setTerm]=useState('');
+
+  useEffect(
+    ()=>{
+      fetch(`https://pixabay.com/api/?key=19313917-cad86abf6397bc4bbe909475e&q=${term}&image_type=photo`).
+      then(response=>response.json()).
+      then(data=>{
+        setImages(data.hits)
+      });
+    },[term]
+  );
+  
+  return (      
+    <div>
+      <Search searchText={(text)=>setTerm(text)}/>
+      <div className="cards">
+        {images.map(image =>(
+          <Card key={image.id} image={image}/>
+        ))}
+      </div>
     </div>
   );
 }
