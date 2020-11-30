@@ -3,20 +3,55 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+}
+.search form{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.search form button{
+    background: none;
+	color: inherit;
+	border: solid 3px rgb(11, 92, 35);
+    padding: 10px;
+    border-radius: 5px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.search form input{
+    text-align: center;
+    border:none;
+    padding: 10px;
+    font-size: 2rem;
+    border-bottom:1px solid black;
+}
 .card{
     padding:5px 0;
-    border:2px solid black;
+    border-radius: 5px;
     width:310px;
     text-align: center;
+    margin: 10px;
+    box-shadow: 2px 2px 5px #888888;
 }
 .card img{
     width:300px;
     height:400px;
     overflow: hidden;
     object-fit: cover;
+    border-radius: 5px;
 }
 .cards{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+li{
+    list-style-type: none;
 }

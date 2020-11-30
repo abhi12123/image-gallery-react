@@ -5,11 +5,11 @@ const Card=({image})=>{
     return(
         <div className="card">
             <img src={image.webformatURL}></img>
-            <div>Photo by {image.user}</div> 
+            <div>Photo by <b>{image.user}</b></div> 
             <ul>
-                <li>views: {image.views}</li>
-                <li>Downloads: {image.downloads}</li>
-                <li>Likes: {image.likes}</li>
+                <li><i class="fas fa-eye"></i> {image.views}</li>
+                <li><i class="fas fa-download"></i> {image.downloads}</li>
+                <li><i class="fas fa-heart"></i> {image.likes}</li>
             </ul>
         </div>
     )

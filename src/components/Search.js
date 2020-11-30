@@ -13,10 +13,12 @@ const Search = ({searchText}) =>{
 
     //onSubmit value is used to setText
     return(
-        <form onSubmit={onSubmit}>
-            <input type='text' onChange={e=>setText(e.target.value)}></input>
-            <button type='submit'>Search</button>
-        </form>
+        <div className="search">
+            <form onSubmit={onSubmit}>
+                <input placeholder="Enter text here" type='text' onChange={e=>setText(e.target.value)}></input>
+                <button type='submit'>Search</button>
+            </form>
+        </div>
     )
 }
 
