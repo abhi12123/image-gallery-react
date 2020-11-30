@@ -1,5 +1,6 @@
 import React from 'react';
 
+//image prop is recieved details are changed accordingly
 const Card=({image})=>{
     return(
         <div className="card">
